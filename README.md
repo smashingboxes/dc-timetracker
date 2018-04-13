@@ -1,6 +1,19 @@
 # Dc-timetracker
 
-*TODO: Project description*
+# Project description:
+
+# MVP:
+
+An application that can record, report and approve employee work hours.
+
+# Requirements:
+
+6 hours total - including setup + arrival time.
+
+- 8:30am - 9:00am (Initial setup)
+- 9:00am - 1:00pm (Technical Challenge)
+
+Between 9:00am and 1:00pm there will be check-ins with the government.
 
 ## Table of Contents
 
