@@ -2,14 +2,8 @@ language: ruby
 rvm:
   - 2.4.2
 before_script:
-<<<<<<< HEAD
-  - cp config/database.example.yml config/database.yml
-  - cp config/secrets.example.yml config/secrets.yml
-  - psql -c 'create database dc_timetracker;' -U postgres
-=======
   - cp config/secrets.example.yml config/secrets.yml
   - psql -c 'create database dc_timetracker_test;' -U postgres
->>>>>>> cfdd8897f30d4a975d8b5f78c37bc353fb53774c
   - bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare --trace
 script:
