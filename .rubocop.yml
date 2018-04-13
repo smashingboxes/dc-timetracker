@@ -321,3 +321,5 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 Style/FormatStringToken:
   Enabled: false
+RSpec/DescribeClass:
+  Enabled: false
