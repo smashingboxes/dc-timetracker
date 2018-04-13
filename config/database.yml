@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: dc_timetracker_development
+
+test:
+  <<: *default
+  database: dc_timetracker_test
+
+production:
+  <<: *default
+  database: dc_timetracker_production
+  username: dc_timetracker
+  password: <%= ENV['DC-TIMETRACKER_DATABASE_PASSWORD'] %>
