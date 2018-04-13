@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'time_entries#index'
+  root to: "time_entries#index"
 
   ActiveAdmin.routes(self)
 

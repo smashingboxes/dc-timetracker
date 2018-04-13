@@ -16,8 +16,8 @@ class TimeEntry < ApplicationRecord
   validate :start_before_end
 
   private
-  
+
   def start_before_end
-    errors.add(:end_time, 'must be after Start Time') if start_time > end_time
+    errors.add(:end_time, "must be after Start Time") if start_time > end_time
   end
 end
