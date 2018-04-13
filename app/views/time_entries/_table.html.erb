@@ -1,0 +1,7 @@
+<% if @time_entries.empty? %>
+<p>You have not created any time entries.</p>
+<% else %>
+  <% @time_entries.each do |time_entry| %>
+    <%= render time_entry %>
+  <% end %>
+<% end %>

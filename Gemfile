@@ -21,6 +21,8 @@ gem "puma", "~> 3.7"
 gem "sass-rails", "~> 5.0"
 gem "taperole", "~> 2.0"
 gem "uglifier", ">= 1.3.0"
+gem 'simple_form'
+
 
 group :development, :test do
   gem "annotate"

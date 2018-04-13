@@ -1,0 +1,10 @@
+<%= form_for time_entry do |f|%>
+  <%= render 'errors', time_entry: time_entry %>
+  <%= f.label :start_time %>
+  <%= f.datetime_select :start_time %><br>
+  <%= f.label :end_time %>
+  <%= f.datetime_select :end_time %><br>
+  <%= f.label :description %>
+  <%= f.text_area :description %><br>
+  <%= f.submit %>
+<% end %>

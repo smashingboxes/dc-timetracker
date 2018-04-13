@@ -1,0 +1,9 @@
+<% if time_entry.errors.any?  %>
+  <ul>
+    <% time_entry.errors.each do |error| %>
+      <li>
+        <%= error.full_messages %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
