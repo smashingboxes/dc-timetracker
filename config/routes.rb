@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  # root to: "/"
+  root to: "hello_world#index"
   ActiveAdmin.routes(self)
 end
