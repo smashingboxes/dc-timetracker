@@ -29,6 +29,7 @@ group :development, :test do
   gem "bundler-audit"
   gem "codeclimate-test-reporter", "~> 1.0.0"
   gem "database_cleaner"
+  gem "dotenv-rails"
   gem "factory_bot_rails"
   gem "faker"
   gem "pry-byebug"
