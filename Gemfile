@@ -13,6 +13,7 @@ gem "activeadmin"
 
 gem "coffee-rails", "~> 4.2"
 gem "devise"
+gem "devise_token_auth"
 
 gem "mailgun-ruby"
 # TODO: bump this to ~> 1.0.0, once this gets resolved: https://github.com/rails/rails/pull/31671
