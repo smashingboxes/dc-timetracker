@@ -25,9 +25,9 @@ Between 9:00am and 1:00pm there will be check-ins with the government.
 
 ## Stack
 
-Rails - ~> 5.1.4
-Ruby - 2.4.2
-PostgreSQL
+- Rails - ~> 5.1.4
+- Ruby - 2.4.2
+- PostgreSQL
 
 ## Getting Started
 
