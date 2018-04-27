@@ -32,7 +32,9 @@
     "angular-mocks": "^1.6.7",
     "mdPickers": "^0.7.5",
     "md-pickers": "^1.1.2",
-    "satellizer": "^0.15.5"
+    "satellizer": "^0.15.5",
+    "material-icons": "^0.2.1",
+    "material-design-icons": "^3.0.1"
   },
   "resolutions": {
     "angular": "1.6.10",
