@@ -21,21 +21,23 @@ define([
         };
 
         $scope.createAccount = () => {
-            data.users.save($scope.newUser, user => {
-                $scope.user = user;
-                $mdDialog.hide();
-            }, () => {
-                $scope.createUserError = 'There was an error creating your user';
-            });
+            $auth.submitRegistration($scope.newUser)
+                .then(user => {
+                    $scope.user = user;
+                    $mdDialog.hide();
+                }, () => {
+                    $scope.createUserError = 'There was an error creating your user';
+                });
         };
 
         $scope.login = () => {
-            $auth.login($scope.auth).then(data => {
-                $scope.auth.user = data.data.user;
-                $mdDialog.hide();
-            }, () => {
-                $scope.loginError = true;
-            });
+            $auth.submitLogin($scope.auth)
+                .then(data => {
+                    $scope.auth.user = data.data.user;
+                    $mdDialog.hide();
+                }, () => {
+                    $scope.loginError = true;
+                });
         };
 
         $scope.logout = () => {

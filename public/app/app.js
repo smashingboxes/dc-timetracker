@@ -11,6 +11,7 @@ define([
     'moment',
     'mdPickers',
     'satellizer',
+    'ngTokenAuth',
     'components/components',
     //VALUES
     'components/values/countries',
@@ -34,6 +35,7 @@ angular => {
         'ngMaterial',
         'mdPickers',
         'satellizer',
+        'ng-token-auth',
         'flash.values',
         'flash.components',
         'flash.home',

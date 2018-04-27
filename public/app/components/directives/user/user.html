@@ -2,7 +2,7 @@
     <md-button ng-if="!auth.user" id="register" ng-click="openLoginOptions($event)">Sign In</md-button>
     <md-menu ng-if="auth.user">
         <md-button ng-click="$mdMenu.open()">
-            Hi, {{ auth.user.name }}
+            Hi, {{ auth.user.email }}
             <md-icon><i class="material-icon">arrow_drop_down</i></md-icon>
         </md-button>
         <md-menu-content width="4">

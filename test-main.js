@@ -32,6 +32,8 @@ require.config({
     angularMessages: '../vendor/angular-messages/angular-messages',
     mdPickers: '../vendor/mdPickers/dist/mdPickers',
     satellizer: '../vendor/satellizer/dist/satellizer.min',
+    ipCookie: '../vendor/angular-cookie/angular-cookie',
+    ngTokenAuth: '../vendor/ng-token-auth/dist/ng-token-auth.min',
   },
   shim: {
     angular: { exports: 'angular' },
@@ -47,6 +49,8 @@ require.config({
     angularMaterial: { deps: ['angular'] },
     mdPickers: { deps: ['angular', 'moment'] },
     satellizer: { deps: ['angular'] },
+    ipCookie: { deps: ['angular'] },
+    ngTokenAuth: { deps: ['angular', 'ipCookie'] },
     lodash: {
       exports: '_'
     }
