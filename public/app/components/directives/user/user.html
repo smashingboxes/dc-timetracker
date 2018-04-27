@@ -1,0 +1,16 @@
+<div id="user-control">
+    <md-button ng-if="!auth.user" id="register" ng-click="openLoginOptions($event)">Sign In</md-button>
+    <md-menu ng-if="auth.user">
+        <md-button ng-click="$mdMenu.open()">
+            Hi, {{ auth.user.name }}
+            <md-icon><i class="material-icon">arrow_drop_down</i></md-icon>
+        </md-button>
+        <md-menu-content width="4">
+            <md-menu-item>
+                <md-button ng-click="logout()">
+                    <md-icon><i class="material-icon">exit_to_app</i></md-icon> Sign Out
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+</div>

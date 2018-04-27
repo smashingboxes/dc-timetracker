@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>DcTimetracker</title>
+  <head lang="en">
+    <title>DC Timetracker</title>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link href="vendor/angular-material/angular-material.min.css" rel="stylesheet">
+    <!-- build:maincss -->
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+	  <!-- endbuild -->
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+  <%= yield %>
 </html>

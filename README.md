@@ -41,6 +41,8 @@ git clone git@github.com:smashingboxes/dc-timetracker.git
 cd dc-timetracker
 bundle install
 bundle exec rails db:setup
+npm install
+bower install
 ```
 
 ### Usage
@@ -50,7 +52,12 @@ To run the app locally:
 ```sh
 bundle exec rails s
 ```
-Then navigate to http://localhost:3000
+Then navigate to [http://localhost:3000](http://localhost:3000)
+
+To automatically compile LESS and run tests on frontend code changes
+```sh
+gulp watch
+```
 
 ### Seeded logins
 
