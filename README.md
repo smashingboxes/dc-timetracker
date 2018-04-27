@@ -42,6 +42,8 @@ cd <APP_DIR>
 bundle install
 cp config/secrets.example.yml config/secrets.yml
 bundle exec rails db:setup
+npm install
+bower install
 ```
 
 ### Usage
@@ -51,7 +53,12 @@ To run the app locally:
 ```sh
 bundle exec rails s
 ```
-Then navigate to http://localhost:3000
+Then navigate to [http://localhost:3000](http://localhost:3000)
+
+To automatically compile LESS and run tests on frontend code changes
+```sh
+gulp watch
+```
 
 ### Seeded logins
 

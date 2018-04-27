@@ -1,0 +1,48 @@
+@import 'colors.less';
+body {
+    background-image: url(../images/bg1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    md-icon {
+        i {
+            font-style: normal;
+        }
+    }
+
+    #main-menu {
+        div.md-nav-bar {
+            background: #000;
+            border-bottom: 1px solid #FFF;
+            box-shadow: 5px 0 10px #000;
+            button {
+                color: #FFF;
+                &.md-accent.md-active {
+                    background: #FFF;
+                    color: #000;
+                }
+            }
+        }
+    }
+
+    #main-content {
+        background: rgba(255,255,255,.7);
+    }
+
+    .top-breathe {
+        margin-top: 40px;
+    }
+
+    div.error {
+        padding: 15px;
+        border: 1px solid #F00;
+        background: #F99;
+    }
+
+    div.info {
+        padding: 15px;
+        border: 1px solid #00F;
+        background: #9CF;
+    }
+}
