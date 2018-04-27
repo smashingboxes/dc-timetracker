@@ -1,0 +1,26 @@
+<body ng-controller="AppController" ng-cloak>
+    <div layout-fill layout="column">
+        <md-nav-bar nav-bar-aria-label="Main Menu" id="main-menu"
+                    md-selected-nav-item="currentNavItem" >
+            <md-nav-item md-nav-click="goto('/')" name="/" id="logo">
+                DC Timetracker
+            </md-nav-item>
+            <md-nav-item md-nav-click="goto('timesheets')" name="timesheets">Timesheets</md-nav-item>
+            <span flex></span>
+            <p-user></p-user>
+        </md-nav-bar>
+        <div ng-view flex layout-fill></div>
+        <md-divider></md-divider>
+        <div layout-padding layout="row" layout-align="center center">
+            <div>
+                <!-- build:appVersion -->
+                    DC Timetracker v0.1.0
+                <!-- endbuild -->
+            </div>
+        </div>
+    </div>
+
+    <!-- build:js -->
+    <script src="vendor/requirejs/require.js?version=1.0" data-main='app/main'></script>
+    <!-- endbuild -->
+</body>
