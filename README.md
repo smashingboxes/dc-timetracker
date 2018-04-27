@@ -1,12 +1,12 @@
 # Dc-timetracker
 
-# Project description:
+# Project description
 
-# MVP:
+## MVP
 
 An application that can record, report and approve employee work hours.
 
-# Requirements:
+## Requirements
 
 6 hours total - including setup + arrival time.
 
@@ -25,9 +25,9 @@ Between 9:00am and 1:00pm there will be check-ins with the government.
 
 ## Stack
 
-Rails - ~> 5.1.4
-Ruby - 2.4.2
-PostgreSQL
+- Rails - ~> 5.1.4
+- Ruby - 2.4.2
+- PostgreSQL
 
 ## Getting Started
 
@@ -37,10 +37,9 @@ If you haven't installed ruby, bundler, and postgresql, do that first. Then, do 
 set up this app:
 
 ```sh
-git clone <REPO_URL>
-cd <APP_DIR>
+git clone git@github.com:smashingboxes/dc-timetracker.git
+cd dc-timetracker
 bundle install
-cp config/secrets.example.yml config/secrets.yml
 bundle exec rails db:setup
 npm install
 bower install
