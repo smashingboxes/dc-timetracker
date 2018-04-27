@@ -347,9 +347,9 @@ gulp.task('copy-index', function() {
     .pipe(htmlreplace({
       js: '<script src="app/main-v' + version + '.js"></script>',
       maincss: '<link rel="stylesheet" href="assets/css/main-v' + version + '.css" />',
-      appVersion: '<!-- App Version: ' + version + '-->'
+      appVersion: 'DC Timetracker v' + version
     }))
-    .pipe(gulp.dest(paths.docroot));
+    .pipe(gulp.dest(paths.docroot + '/..'));
 });
 
 gulp.task('build', [
