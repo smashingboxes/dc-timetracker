@@ -5,6 +5,10 @@ before_script:
   - psql -c 'create database dc_timetracker_test;' -U postgres
   - bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare --trace
+  - npm install
+  - npm install -g bower
+  - bower install
 script:
   - bundle exec rubocop
   - bundle exec rspec
+  - gulp test
