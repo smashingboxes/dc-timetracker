@@ -1,4 +1,4 @@
-<md-dialog id="login-modal" flex="50" flex-md="70" aria-label="Login / Register">
+<md-dialog id="login-modal" flex="30" flex-md="50" aria-label="Login / Register">
     <md-toolbar>
         <div class="md-toolbar-tools">
             <h2>Login / Register</h2>
@@ -46,18 +46,11 @@
 
             <md-tab label="CREATE AN ACCOUNT">
                 <form name="accountForm" ng-submit="createAccount()" ng-init="newUser = {}" novalidate>
+                    <div class="error" ng-if="createUserError">
+                        <md-icon><i class="material-icon">error</i></md-icon>
+                        There was an error creating your user account.
+                    </div>
                     <div layout="column">
-                        <div layout="row">
-                            <md-input-container flex>
-                                <label>First Name</label>
-                                <input type="text" ng-model="newUser.firstName" required>
-                            </md-input-container>
-
-                            <md-input-container flex>
-                                <label>Last Name</label>
-                                <input type="text" ng-model="newUser.lastName" required>
-                            </md-input-container>
-                        </div>
                         <md-input-container flex>
                             <label>Email Address</label>
                             <input type="email" ng-model="newUser.email" required>

@@ -1,9 +1,11 @@
 'use strict';
 define(
     [
-        'angular'
+        'angular',
+        'ngTokenAuth',
+        'angularResource'
     ],
     angular => {
-        angular.module('flash.components', []);
+        angular.module('flash.components', ['ngResource', 'ng-token-auth']);
     }
 );

@@ -11,6 +11,7 @@ define([
     'moment',
     'mdPickers',
     'satellizer',
+    'ngTokenAuth',
     'components/components',
     //VALUES
     'components/values/countries',
@@ -22,6 +23,7 @@ define([
     'components/directives/focus/focus',
     //FEATURES
     'features/home/home',
+    'features/login/login',
 ],
 angular => {
     var app = angular.module('flash', [
@@ -34,9 +36,11 @@ angular => {
         'ngMaterial',
         'mdPickers',
         'satellizer',
+        'ng-token-auth',
         'flash.values',
         'flash.components',
         'flash.home',
+        'flash.login'
     ]);
 
     app.config($routeProvider => {
@@ -45,7 +49,16 @@ angular => {
         });
     });
 
-    function AppController($scope, $location) {
+    function AppController($scope, $auth, $location, authService) {
+        $auth.validateUser().then(user => {
+            authService.data.user = user;
+            if ($location.path() === '/login') {
+                $location.path('/');
+            }
+        }, () => {
+            delete authService.data.user;
+            $location.path('/login');
+        });
         $scope.currentNavItem = '/';
         $scope.goto = page => {
             $location.path(page);

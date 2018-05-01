@@ -1,25 +1,22 @@
-
-body {
-  background-image: url(../images/bg1.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center center;
-  background-size: cover;
+#login-page {
+  margin-top: 15px;
 }
+
+
 body md-icon i {
   font-style: normal;
 }
 body #main-menu div.md-nav-bar {
-  background: #000;
+  background: #FFF;
   border-bottom: 1px solid #FFF;
   -webkit-box-shadow: 5px 0 10px #000;
           box-shadow: 5px 0 10px #000;
 }
 body #main-menu div.md-nav-bar button {
-  color: #FFF;
+  color: #333;
 }
 body #main-menu div.md-nav-bar button.md-accent.md-active {
-  background: #FFF;
+  background: #EFEFEF;
   color: #000;
 }
 body #main-content {
