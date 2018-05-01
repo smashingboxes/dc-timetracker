@@ -50,6 +50,7 @@ angular => {
     });
 
     function AppController($scope, $auth, $location, authService) {
+        $scope.auth = authService.data;
         $auth.validateUser().then(user => {
             authService.data.user = user;
             if ($location.path() === '/login') {

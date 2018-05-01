@@ -6,14 +6,23 @@
 body md-icon i {
   font-style: normal;
 }
+body #logo {
+  max-width: 140px;
+  margin-right: 200px;
+  padding-left: 15px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+body #main-menu {
+  height: 80px;
+  border-bottom: 1px solid #CCC;
+}
 body #main-menu div.md-nav-bar {
   background: #FFF;
-  border-bottom: 1px solid #FFF;
-  -webkit-box-shadow: 5px 0 10px #000;
-          box-shadow: 5px 0 10px #000;
 }
 body #main-menu div.md-nav-bar button {
   color: #333;
+  text-transform: capitalize;
 }
 body #main-menu div.md-nav-bar button.md-accent.md-active {
   background: #EFEFEF;
