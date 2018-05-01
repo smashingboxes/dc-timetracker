@@ -4,7 +4,7 @@ define([
     'components/components',
     'components/services/data-service'
 ], angular => {
-    function TimesheetsController($scope, data, authService) {
+    function TimesheetsController($scope, data) {
         function getLastDayOfMonth(month, year) {
             return new Date(year, month, 0).getDate();
         }
