@@ -1,4 +1,4 @@
-<div id="user-control">
+<div id="user-control" ng-if="auth.user">
     <md-button ng-if="!auth.user" id="register" ng-click="openLoginOptions($event)">Sign In</md-button>
     <md-menu ng-if="auth.user">
         <md-button ng-click="$mdMenu.open()">
