@@ -45,10 +45,12 @@ angular => {
         'flash.timesheets'
     ]);
 
-    app.config($routeProvider => {
+    app.config(($routeProvider, $qProvider) => {
         $routeProvider.otherwise({
             redirectTo: '/404'
         });
+
+        $qProvider.errorOnUnhandledRejections(false);
     });
 
     function AppController($scope, $auth, $location, authService) {
