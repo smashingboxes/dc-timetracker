@@ -30,12 +30,14 @@ define([
         $scope.timeEntryObj = { timeEntrySets: rows };
 
         $scope.saveTime = () => {
+            $scope.processing = true;
             delete $scope.submitError;
             delete $scope.saveSuccess;
             data.timesheets.save($scope.timeEntryObj, () => {
                 delete $scope.processing;
                 $scope.saveSuccess = true;
             }, () => {
+                delete $scope.processing;
                 $scope.submitTimeError = true;
             });
         };

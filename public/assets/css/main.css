@@ -122,6 +122,9 @@ body #main-menu div.md-nav-bar button.md-accent.md-active {
   background: #EFEFEF !important;
   color: #000;
 }
+body md-menu-item button {
+  border: none !important;
+}
 body #main-content {
   background: rgba(255, 255, 255, 0.7);
 }
@@ -137,6 +140,11 @@ body div.info {
   padding: 15px;
   border: 1px solid #00F;
   background: #9CF;
+}
+body div.success {
+  padding: 15px;
+  border: 1px solid #090;
+  background: #3C7;
 }
 button.md-button {
   text-transform: none;

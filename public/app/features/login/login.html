@@ -2,7 +2,7 @@
     <h2>Login / Register</h2>
     <md-tabs md-dynamic-height>
         <md-tab label="SIGN IN">
-            <md-content>
+            <div>
                 <form name="loginForm" ng-submit="login()" novalidate>
                     <div class="error" ng-if="loginError">
                         <md-icon><i class="material-icon">error</i></md-icon>
@@ -31,7 +31,7 @@
                     
                     </div>
                 </form>
-            </md-content>
+            </div>
         </md-tab>
 
         <md-tab label="CREATE AN ACCOUNT">

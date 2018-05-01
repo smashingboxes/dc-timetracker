@@ -34,6 +34,16 @@
                 <div class="total" flex>{{ getGrandTotal() }}</div>
             </div>
             <div id="actions" layout="row" layout-padding layout-align="end center">
+                <md-progress-linear md-mode="indeterminate" ng-if="processing"></md-progress-linear>
+                <div class="error" ng-if="submitTimeError">
+                    <md-icon><i class="material-icon">warning</i></md-icon>
+                    There was an error saving your time entry
+                </div>
+                <div class="success" ng-if="saveSuccess">
+                    <md-icon><i class="material-icon">check</i></md-icon>
+                    Your time entry has been saved successfully
+                </div>
+                <span flex ng-if="submitTimeError || saveSuccess"></span>
                 <md-button class="md-raised md-default" type="submit">
                     Sign
                 </md-button>
