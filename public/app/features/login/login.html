@@ -1,0 +1,79 @@
+<md-content layout-padding flex="50" flex-offset="25" id="login-page">
+    <h2>Login / Register</h2>
+    <md-tabs md-dynamic-height>
+        <md-tab label="SIGN IN">
+            <md-content>
+                <form name="loginForm" ng-submit="login()" novalidate>
+                    <div class="error" ng-if="loginError">
+                        <md-icon><i class="material-icon">error</i></md-icon>
+                        Invalid email address or password. Please check the information you provided and try again
+                    </div>
+                    <div layout="column" flex>
+                        <md-input-container flex>
+                            <label>Email Address</label>
+                            <input type="email" ng-model="auth.email" required>
+                        </md-input-container>
+
+                        <md-input-container flex>
+                            <label>Password</label>
+                            <input type="password" ng-model="auth.password" required>
+                        </md-input-container>
+                    </div>
+                    <div layout="row" layout-align="center center" flex>
+                        <md-button id="cancel-registration" class="md-raised md-default" ng-click="closeDialog()">
+                            <md-icon><i class="material-icon">cancel</i></md-icon>
+                            Cancel
+                        </md-button>
+                        <md-button ng-disabled="loginForm.$invalid" id="submit-registration" class="md-primary md-raised" type="submit">
+                            <md-icon><i class="material-icon">check</i></md-icon>
+                            Sign in
+                        </md-button>
+                    
+                    </div>
+                </form>
+            </md-content>
+        </md-tab>
+
+        <md-tab label="CREATE AN ACCOUNT">
+            <form name="accountForm" ng-submit="createAccount()" ng-init="newUser = {}" novalidate>
+                <div class="error" ng-if="createUserError">
+                    <md-icon><i class="material-icon">error</i></md-icon>
+                    There was an error creating your user account.
+                </div>
+                <div layout="column">
+                    <md-input-container flex>
+                        <label>Email Address</label>
+                        <input type="email" ng-model="newUser.email" required>
+                    </md-input-container>
+
+                    <div layout="row">
+                        <md-input-container flex>
+                            <label>Password</label>
+                            <input type="password" ng-model="newUser.password" required>
+                        </md-input-container>
+
+                        <md-input-container flex>
+                            <label>Confirm Password</label>
+                            <input type="password" 
+                                   name="confirmPassword"
+                                   ng-model="newUser.confirmPassword" 
+                                   ng-change="accountForm.$invalid = accountForm.confirmPassword.$invalid = newUser.password != newUser.confirmPassword"
+                                   required>
+                        </md-input-container>
+                    </div>
+                </div>
+
+                <div layout="row" layout-align="end center">
+                    <md-button id="cancel-registration" class="md-raised md-default" ng-click="closeDialog()">
+                        <md-icon><i class="material-icon">cancel</i></md-icon>
+                        Cancel
+                    </md-button>
+                    <md-button ng-disabled="accountForm.$invalid" id="submit-registration" class="md-primary md-raised" type="submit">
+                        <md-icon><i class="material-icon">check</i></md-icon>
+                        Create Account
+                    </md-button>
+                </div>
+            </form>
+        </md-tab>
+    </md-tabs>
+</md-content>

@@ -49,10 +49,16 @@ angular => {
         });
     });
 
-    function AppController($scope, $location, authService) {
-        if (!authService.data.user) {
+    function AppController($scope, $auth, $location, authService) {
+        $auth.validateUser().then(user => {
+            authService.data.user = user;
+            if ($location.path() === '/login') {
+                $location.path('/');
+            }
+        }, () => {
+            delete authService.data.user;
             $location.path('/login');
-        }
+        });
         $scope.currentNavItem = '/';
         $scope.goto = page => {
             $location.path(page);

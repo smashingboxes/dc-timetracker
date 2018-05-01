@@ -4,7 +4,6 @@ define([
     'components/components'
 ], angular => {
     function UserController($scope, $auth, authService, data, $mdDialog, $location) {
-        $auth.validateUser().then(user => authService.data.user = user, delete authService.data.user);
         $scope.auth = authService.data;
         $scope.openLoginOptions = e => {
             delete $scope.loginError;
