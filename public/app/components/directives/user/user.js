@@ -3,7 +3,8 @@ define([
     'angular',
     'components/components'
 ], angular => {
-    function UserController($scope, $auth, authService, data, $mdDialog) {
+    function UserController($scope, $auth, authService, data, $mdDialog, $location) {
+        $auth.validateUser().then(user => authService.data.user = user, delete authService.data.user);
         $scope.auth = authService.data;
         $scope.openLoginOptions = e => {
             delete $scope.loginError;
@@ -33,7 +34,7 @@ define([
         $scope.login = () => {
             $auth.submitLogin($scope.auth)
                 .then(data => {
-                    $scope.auth.user = data.data.user;
+                    $scope.auth.user = data;
                     $mdDialog.hide();
                 }, () => {
                     $scope.loginError = true;
@@ -41,8 +42,13 @@ define([
         };
 
         $scope.logout = () => {
-            data.auth.delete();
-            delete $scope.auth.user;
+            $auth.signOut().then(() => {
+                delete $scope.auth.user;
+                $location.path('/login');
+            }, () => {
+                delete $scope.auth.user;
+                $location.path('/login');
+            });
         };
     }
 

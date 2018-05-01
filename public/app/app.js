@@ -23,6 +23,7 @@ define([
     'components/directives/focus/focus',
     //FEATURES
     'features/home/home',
+    'features/login/login',
 ],
 angular => {
     var app = angular.module('flash', [
@@ -39,6 +40,7 @@ angular => {
         'flash.values',
         'flash.components',
         'flash.home',
+        'flash.login'
     ]);
 
     app.config($routeProvider => {
@@ -47,7 +49,10 @@ angular => {
         });
     });
 
-    function AppController($scope, $location) {
+    function AppController($scope, $location, authService) {
+        if (!authService.data.user) {
+            $location.path('/login');
+        }
         $scope.currentNavItem = '/';
         $scope.goto = page => {
             $location.path(page);
