@@ -13,7 +13,6 @@
 /tmp/*
 /yarn-error.log
 ER_Model.pdf
-/public/vendor
 /deploy
 /public/app/assets/css/main.css
 /coverage
