@@ -1,5 +1,6 @@
 @import 'colors.less';
 body {
+    font-size: 0.9em;
     md-icon {
         i {
             font-style: normal;
@@ -22,8 +23,9 @@ body {
             button {
                 color: #333;
                 text-transform: capitalize;
+                border: none;
                 &.md-accent.md-active {
-                    background: #EFEFEF;
+                    background: #EFEFEF !important;
                     color: #000;
                 }
             }
@@ -48,6 +50,23 @@ body {
         padding: 15px;
         border: 1px solid #00F;
         background: #9CF;
+    }
+}
+
+button.md-button {
+    text-transform: none;
+    font-size: 0.9em;
+    min-width: 160px;
+    height: 30px;
+    padding: 0;
+    border-radius: 5px !important;
+    border: 2px solid @medium-blue;
+    &.md-primary {
+        background: @medium-blue !important;
+    }
+    &.md-default {
+        background: #FFF;
+        color: @medium-blue;
     }
 }
 

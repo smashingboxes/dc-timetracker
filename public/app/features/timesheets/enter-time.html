@@ -1,0 +1,45 @@
+<md-content layout-padding id="time-entry-view">
+    <div layout="row">
+        <h2>{{ startDate | date: 'MMMM d' }} - {{ endDate | date: 'd' }}</h2>
+    </div>
+    <div layout="column" class="block">
+        <div layout="row" id="table-headers">
+            <div class="description header" flex="40">Description of work</div>
+            <div class="charge-code header" flex="10">Charge Code</div>
+            <div class="date" ng-class="{ 'active': date === timeEntryObj.activeDate }" ng-repeat="date in dates" flex>{{ date | date: 'd' }}</div>
+            <div class="total" flex></div>
+        </div>
+        <div layout="row" class="table-rows" layout-align="center center" ng-repeat-start="timeEntry in timeEntryObj.timeEntrySets">
+            <div class="description header" flex="40" layout="column">
+                <textarea flex rows="2" ng-model="chargeCode.description" placeholder="Describe work"></textarea>
+            </div>
+            <div class="charge-code" flex="10">
+                <div class="bordered">
+                    <input ng-model="chargeCode.chargeCode" aria-label="charge code">
+                </div>
+            </div>
+            <div class="date bordered" ng-class="{ 'active': date === timeEntryObj.activeDate }" ng-init="timeEntry.hours[$index] = { date: date }" ng-repeat="date in dates" flex>
+                <div>
+                    <input ng-focus="timeEntryObj.activeDate = date" ng-model="timeEntry.hours[$index].hoursWorked" aria-label="hours worked for {{ date | date: 'mediumDate' }}">
+                </div>
+            </div>
+            <div class="total" flex>{{ getTotal(chargeCode) }}</div>
+        </div>
+        <md-divider ng-repeat-end ng-if="!$last"></md-divider>
+        <div id="totals-row">
+            <div class="description header" flex="40"></div>
+            <div class="charge-code header" flex="10"></div>
+            <div class="date" ng-repeat="date in dates" flex>{{ getDateTotal(date) }}</div>
+            <div class="total" flex>{{ getGrandTotal() }}</div>
+        </div>
+        <div id="actions" layout="row" layout-padding layout-align="end center">
+            <md-button class="md-raised md-default" type="submit">
+                Sign
+            </md-button>
+
+            <md-button class="md-raised md-primary" type="submit">
+                Save
+            </md-button>
+        </div>
+    </div>
+</md-content>

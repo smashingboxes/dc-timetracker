@@ -24,6 +24,7 @@ define([
     //FEATURES
     'features/home/home',
     'features/login/login',
+    'features/timesheets/timesheets'
 ],
 angular => {
     var app = angular.module('flash', [
@@ -40,7 +41,8 @@ angular => {
         'flash.values',
         'flash.components',
         'flash.home',
-        'flash.login'
+        'flash.login',
+        'flash.timesheets'
     ]);
 
     app.config($routeProvider => {
