@@ -29,8 +29,6 @@ Between 9:00am and 1:00pm there will be check-ins with the government.
 - Ruby - 2.4.2
 - PostgreSQL
 
-## Getting Started
-
 ### Installation
 
 If you haven't installed ruby, bundler, and postgresql, do that first. Then, do the following to
@@ -58,6 +56,15 @@ To automatically compile LESS and run tests on frontend code changes
 ```sh
 gulp watch
 ```
+
+## Additional Commands
+
+- bower install
+- rails db:create
+- rails db:migrate
+- rails db:seed
+- rails db:reset
+- rails s
 
 ### Seeded logins
 
