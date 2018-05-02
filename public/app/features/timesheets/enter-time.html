@@ -19,9 +19,9 @@
                         <input ng-model="timeEntry.chargeCode" aria-label="charge code">
                     </div>
                 </div>
-                <div class="date bordered" ng-class="{ 'active': date === timeEntryObj.activeDate }" ng-init="timeEntry.hours[$index] = { date: date }" ng-repeat="date in dates" flex>
+                <div class="date bordered" ng-class="{ 'active': date === timeEntryObj.activeDate }" ng-init="timeEntry.timeEntries[$index] = { date: date }" ng-repeat="date in dates" flex>
                     <div>
-                        <input ng-focus="timeEntryObj.activeDate = date" ng-model="timeEntry.hours[$index].hours" ng-disabled="!timeEntry.chargeCode" aria-label="hours worked for {{ date | date: 'mediumDate' }}">
+                        <input ng-focus="timeEntryObj.activeDate = date" ng-model="timeEntry.timeEntries[$index].hours" ng-disabled="!timeEntry.chargeCode" aria-label="hours worked for {{ date | date: 'mediumDate' }}">
                     </div>
                 </div>
                 <div class="total" flex>{{ getTotal(timeEntry) }}</div>

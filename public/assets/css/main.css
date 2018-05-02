@@ -83,7 +83,7 @@
   height: 50px;
 }
 #time-entry-view #totals-row div {
-  padding: 15px;
+  padding: 15px 0;
   text-align: center;
 }
 #time-entry-view #totals-row div.total {
