@@ -24,7 +24,7 @@ define([
         $scope.dates = dates;
         const rows = [];
         for (let i = 0; i < 4; i++) {
-            rows.push({ hours: [] });
+            rows.push({ timeEntries: [] });
         }
 
         $scope.timeEntryObj = { timeEntrySets: rows };
@@ -44,16 +44,16 @@ define([
 
         $scope.getTotal = timeEntry => {
             let total = 0;
-            timeEntry.hours.forEach(hour => total += hour.hoursWorked * 1 || 0);
+            timeEntry.timeEntries.forEach(entry => total += entry.hours * 1 || 0);
             return total;
         };
 
         $scope.getDateTotal = date => {
             let total = 0;
             $scope.timeEntryObj.timeEntrySets.forEach(timeEntry => {
-                timeEntry.hours.forEach(hour => {
-                    if (hour.date === date) {
-                        total += hour.hoursWorked * 1 || 0;
+                timeEntry.timeEntries.forEach(entry => {
+                    if (entry.date === date) {
+                        total += entry.hours * 1 || 0;
                     }
                 });
             });

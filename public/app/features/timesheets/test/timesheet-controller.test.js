@@ -21,10 +21,10 @@ define([
 
         it('should get the total hours for a time entry row', () => {
             const test = {
-                hours: [
-                    { hoursWorked: 8 },
-                    { hoursWorked: 7 },
-                    { hoursWorked: 6 }
+                timeEntries: [
+                    { hours: 8 },
+                    { hours: 7 },
+                    { hours: 6 }
                 ]
             };
 
@@ -36,24 +36,24 @@ define([
             $scope.timeEntryObj = {
                 timeEntrySets: [
                     {
-                        hours: [
-                            { date, hoursWorked: 8 },
-                            { date: 1234, hoursWorked: 8 },
-                            { date: 2345, hoursWorked: 8 },
+                        timeEntries: [
+                            { date, hours: 8 },
+                            { date: 1234, hours: 8 },
+                            { date: 2345, hours: 8 },
                         ]
                     },
                     {
-                        hours: [
-                            { date, hoursWorked: 7 },
-                            { date: 1234, hoursWorked: 7 },
-                            { date: 2345, hoursWorked: 7 },
+                        timeEntries: [
+                            { date, hours: 7 },
+                            { date: 1234, hours: 7 },
+                            { date: 2345, hours: 7 },
                         ]
                     },
                     {
-                        hours: [
-                            { date, hoursWorked: 6 },
-                            { date: 1234, hoursWorked: 6 },
-                            { date: 2345, hoursWorked: 6 },
+                        timeEntries: [
+                            { date, hours: 6 },
+                            { date: 1234, hours: 6 },
+                            { date: 2345, hours: 6 },
                         ]
                     },
                 ]
@@ -67,24 +67,24 @@ define([
             $scope.timeEntryObj = {
                 timeEntrySets: [
                     {
-                        hours: [
-                            { date, hoursWorked: 8 },
-                            { date: 1234, hoursWorked: 8 },
-                            { date: 2345, hoursWorked: 8 },
+                        timeEntries: [
+                            { date, hours: 8 },
+                            { date: 1234, hours: 8 },
+                            { date: 2345, hours: 8 },
                         ]
                     },
                     {
-                        hours: [
-                            { date, hoursWorked: 7 },
-                            { date: 1234, hoursWorked: 7 },
-                            { date: 2345, hoursWorked: 7 },
+                        timeEntries: [
+                            { date, hours: 7 },
+                            { date: 1234, hours: 7 },
+                            { date: 2345, hours: 7 },
                         ]
                     },
                     {
-                        hours: [
-                            { date, hoursWorked: 6 },
-                            { date: 1234, hoursWorked: 6 },
-                            { date: 2345, hoursWorked: 6 },
+                        timeEntries: [
+                            { date, hours: 6 },
+                            { date: 1234, hours: 6 },
+                            { date: 2345, hours: 6 },
                         ]
                     },
                 ]
@@ -99,24 +99,24 @@ define([
             $scope.timeEntryObj = {
                 timeEntrySets: [
                     {
-                        hours: [
-                            { date, hoursWorked: 8 },
-                            { date: 1234, hoursWorked: 8 },
-                            { date: 2345, hoursWorked: 8 },
+                        timeEntries: [
+                            { date, hours: 8 },
+                            { date: 1234, hours: 8 },
+                            { date: 2345, hours: 8 },
                         ]
                     },
                     {
-                        hours: [
-                            { date, hoursWorked: 7 },
-                            { date: 1234, hoursWorked: 7 },
-                            { date: 2345, hoursWorked: 7 },
+                        timeEntries: [
+                            { date, hours: 7 },
+                            { date: 1234, hours: 7 },
+                            { date: 2345, hours: 7 },
                         ]
                     },
                     {
-                        hours: [
-                            { date, hoursWorked: 6 },
-                            { date: 1234, hoursWorked: 6 },
-                            { date: 2345, hoursWorked: 6 },
+                        timeEntries: [
+                            { date, hours: 6 },
+                            { date: 1234, hours: 6 },
+                            { date: 2345, hours: 6 },
                         ]
                     },
                 ]
@@ -135,24 +135,24 @@ define([
             $scope.timeEntryObj = {
                 timeEntrySets: [
                     {
-                        hours: [
-                            { date, hoursWorked: 8 },
-                            { date: 1234, hoursWorked: 8 },
-                            { date: 2345, hoursWorked: 8 },
+                        timeEntries: [
+                            { date, hours: 8 },
+                            { date: 1234, hours: 8 },
+                            { date: 2345, hours: 8 },
                         ]
                     },
                     {
-                        hours: [
-                            { date, hoursWorked: 7 },
-                            { date: 1234, hoursWorked: 7 },
-                            { date: 2345, hoursWorked: 7 },
+                        timeEntries: [
+                            { date, hours: 7 },
+                            { date: 1234, hours: 7 },
+                            { date: 2345, hours: 7 },
                         ]
                     },
                     {
-                        hours: [
-                            { date, hoursWorked: 6 },
-                            { date: 1234, hoursWorked: 6 },
-                            { date: 2345, hoursWorked: 6 },
+                        timeEntries: [
+                            { date, hours: 6 },
+                            { date: 1234, hours: 6 },
+                            { date: 2345, hours: 6 },
                         ]
                     },
                 ]
