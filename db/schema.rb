@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180502130456) do
+ActiveRecord::Schema.define(version: 20180502131545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,13 @@ ActiveRecord::Schema.define(version: 20180502130456) do
   create_table "time_entries", force: :cascade do |t|
     t.datetime "date"
     t.float "hours"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "time_entry_sets", force: :cascade do |t|
+    t.text "description"
+    t.string "charge_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
