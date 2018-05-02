@@ -1,6 +1,5 @@
 ## Why?
-- :notebook: https://smashingboxes.atlassian.net/browse/###-###
-- :bug: https://smashingboxes.atlassian.net/browse/###-###
+- :notebook: https://smashingboxes.atlassian.net/browse/SEVIS-###
 
 ## What Changed?
 - List of changes here
