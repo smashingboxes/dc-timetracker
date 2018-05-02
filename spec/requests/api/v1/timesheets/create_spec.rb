@@ -20,7 +20,7 @@ describe "POST /api/v1/timesheets", as: :request do
         time_entry_sets: [
           {
             charge_code: "123abc",
-            time_entries:  time_entries[0..3]
+            time_entries:  time_entries[0..2]
           },
           {
             charge_code: "123abc123",
