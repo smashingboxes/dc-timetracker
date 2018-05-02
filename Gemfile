@@ -10,11 +10,10 @@ ruby "2.4.2"
 gem "rails", "~> 5.1.4"
 
 gem "activeadmin"
-
+gem "active_model_serializers", "~> 0.10.0"
 gem "coffee-rails", "~> 4.2"
 gem "devise"
 gem "devise_token_auth"
-
 gem "mailgun-ruby"
 # TODO: bump this to ~> 1.0.0, once this gets resolved: https://github.com/rails/rails/pull/31671
 gem "pg", "~> 0.21.0"

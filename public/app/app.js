@@ -24,6 +24,7 @@ define([
     //FEATURES
     'features/home/home',
     'features/login/login',
+    'features/timesheets/timesheets'
 ],
 angular => {
     var app = angular.module('flash', [
@@ -40,16 +41,20 @@ angular => {
         'flash.values',
         'flash.components',
         'flash.home',
-        'flash.login'
+        'flash.login',
+        'flash.timesheets'
     ]);
 
-    app.config($routeProvider => {
+    app.config(($routeProvider, $qProvider) => {
         $routeProvider.otherwise({
             redirectTo: '/404'
         });
+
+        $qProvider.errorOnUnhandledRejections(false);
     });
 
     function AppController($scope, $auth, $location, authService) {
+        $scope.auth = authService.data;
         $auth.validateUser().then(user => {
             authService.data.user = user;
             if ($location.path() === '/login') {

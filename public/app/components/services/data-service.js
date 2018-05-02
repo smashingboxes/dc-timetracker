@@ -13,7 +13,7 @@ define(
                 }
             });
 
-            const timesheets = $resource('/api/timesheets/:id', { id: '@id' }, {
+            const timesheets = $resource('/api/v1/timesheets/:id', { id: '@id' }, {
                 update: { method: 'PUT' }
             });
 

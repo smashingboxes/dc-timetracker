@@ -27,4 +27,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   include DeviseTokenAuth::Concerns::User
+
+  has_many :time_entry_sets, dependent: :destroy
+  has_many :time_entries, through: :time_entry_sets
 end

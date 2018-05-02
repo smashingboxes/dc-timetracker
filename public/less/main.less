@@ -1,23 +1,39 @@
 @import 'colors.less';
 body {
+    font-size: 0.9em;
     md-icon {
         i {
             font-style: normal;
         }
     }
 
+    #logo {
+        max-width: 140px;
+        margin-right: 200px;
+        padding-left: 15px;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
     #main-menu {
+        height: 80px;
+        border-bottom: 1px solid #CCC;
         div.md-nav-bar {
             background: #FFF;
-            border-bottom: 1px solid #FFF;
-            box-shadow: 5px 0 10px #000;
             button {
                 color: #333;
+                text-transform: capitalize;
+                border: none;
                 &.md-accent.md-active {
-                    background: #EFEFEF;
+                    background: #EFEFEF !important;
                     color: #000;
                 }
             }
+        }
+    }
+    md-menu-item {
+        button {
+            border: none !important;
         }
     }
 
@@ -39,6 +55,29 @@ body {
         padding: 15px;
         border: 1px solid #00F;
         background: #9CF;
+    }
+
+    div.success {
+        padding: 15px;
+        border: 1px solid #090;
+        background: #3C7;
+    }
+}
+
+button.md-button {
+    text-transform: none;
+    font-size: 0.9em;
+    min-width: 160px;
+    height: 30px;
+    padding: 0;
+    border-radius: 5px !important;
+    border: 2px solid @medium-blue;
+    &.md-primary {
+        background: @medium-blue !important;
+    }
+    &.md-default {
+        background: #FFF;
+        color: @medium-blue;
     }
 }
 

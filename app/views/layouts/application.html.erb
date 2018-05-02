@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>SEVIS CAD Timekeeping</title>
+    <title>SEVIS-CAD Timekeeping</title>
     <link href="vendor/angular-material/angular-material.min.css" rel="stylesheet">
     <!-- build:maincss -->
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
@@ -12,15 +12,18 @@
 </head>
 <body ng-controller="AppController" ng-cloak>
     <div layout-fill layout="column">
-        <md-nav-bar nav-bar-aria-label="Main Menu" id="main-menu"
-                    md-selected-nav-item="currentNavItem" >
-            <md-nav-item md-nav-click="goto('/')" name="/" id="logo">
-                DC Timetracker
-            </md-nav-item>
-            <md-nav-item md-nav-click="goto('timesheets')" name="timesheets">Timesheets</md-nav-item>
-            <span flex></span>
-            <p-user></p-user>
-        </md-nav-bar>
+        <div id="main-menu" layout="row" layout-align="start end">
+            <h1 id="logo">SEVIS-CAD Timekeeping</h1>
+            <md-nav-bar nav-bar-aria-label="Main Menu" 
+                        ng-if="auth.user"
+                        flex
+                        md-selected-nav-item="currentNavItem" >
+                <md-nav-item md-nav-click="goto('/')" name="dashboard">Dashboard</md-nav-item>
+                <md-nav-item md-nav-click="goto('timesheets')" name="timesheets">Manage Time</md-nav-item>
+                <span flex></span>
+                <p-user></p-user>
+            </md-nav-bar>
+        </div>
         <div ng-view flex></div>
         <md-divider></md-divider>
         <div layout-padding layout="row" layout-align="center center">

@@ -2,22 +2,128 @@
   margin-top: 15px;
 }
 
+#time-entry-view h2 {
+  color: #5f697a;
+  font-weight: normal;
+}
+#time-entry-view div.block {
+  border: 1px solid #CCC;
+  padding: 0;
+}
+#time-entry-view #table-headers {
+  border: 2px solid #7fb8dd;
+}
+#time-entry-view #table-headers div {
+  padding: 10px;
+}
+#time-entry-view #table-headers div.active {
+  background: #0070bb;
+}
+#time-entry-view #table-headers div.header {
+  font-weight: bold;
+}
+#time-entry-view #table-headers div.total {
+  width: 60px;
+}
+#time-entry-view #table-headers div.date {
+  text-align: center;
+}
+#time-entry-view #table-headers div.date.active {
+  background: #0070bb;
+  color: #FFF;
+}
+#time-entry-view div.table-rows {
+  height: 75px;
+}
+#time-entry-view div.table-rows div {
+  margin: 2px;
+  padding: 10px;
+}
+#time-entry-view div.table-rows div.date {
+  padding: 0 !important;
+  margin: 0;
+}
+#time-entry-view div.table-rows div.date.active {
+  background: #b2d4ea;
+}
+#time-entry-view div.table-rows div.date div {
+  margin: 2px;
+  padding: 5x 0;
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+#time-entry-view div.table-rows div.charge-code {
+  border: none;
+  padding: 0;
+}
+#time-entry-view div.table-rows div.charge-code div {
+  width: 60%;
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+#time-entry-view div.table-rows div input {
+  max-width: 90%;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+#time-entry-view div.table-rows div textarea {
+  border: none;
+  border-bottom: 2px solid #0070bb;
+}
+#time-entry-view div.table-rows div.total {
+  text-align: center;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+#time-entry-view #totals-row {
+  background: #0071bc;
+  color: #FFF;
+  font-weight: bold;
+  height: 50px;
+}
+#time-entry-view #totals-row div {
+  padding: 15px 0;
+  text-align: center;
+}
+#time-entry-view #totals-row div.total {
+  font-size: 1.6em;
+  font-weight: bold;
+  text-align: center;
+}
 
+
+body {
+  font-size: 0.9em;
+}
 body md-icon i {
   font-style: normal;
 }
+body #logo {
+  max-width: 140px;
+  margin-right: 200px;
+  padding-left: 15px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+body #main-menu {
+  height: 80px;
+  border-bottom: 1px solid #CCC;
+}
 body #main-menu div.md-nav-bar {
   background: #FFF;
-  border-bottom: 1px solid #FFF;
-  -webkit-box-shadow: 5px 0 10px #000;
-          box-shadow: 5px 0 10px #000;
 }
 body #main-menu div.md-nav-bar button {
   color: #333;
+  text-transform: capitalize;
+  border: none;
 }
 body #main-menu div.md-nav-bar button.md-accent.md-active {
-  background: #EFEFEF;
+  background: #EFEFEF !important;
   color: #000;
+}
+body md-menu-item button {
+  border: none !important;
 }
 body #main-content {
   background: rgba(255, 255, 255, 0.7);
@@ -34,6 +140,27 @@ body div.info {
   padding: 15px;
   border: 1px solid #00F;
   background: #9CF;
+}
+body div.success {
+  padding: 15px;
+  border: 1px solid #090;
+  background: #3C7;
+}
+button.md-button {
+  text-transform: none;
+  font-size: 0.9em;
+  min-width: 160px;
+  height: 30px;
+  padding: 0;
+  border-radius: 5px !important;
+  border: 2px solid #0071bc;
+}
+button.md-button.md-primary {
+  background: #0071bc !important;
+}
+button.md-button.md-default {
+  background: #FFF;
+  color: #0071bc;
 }
 @font-face {
   font-family: 'Material Icons';
