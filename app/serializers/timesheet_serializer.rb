@@ -1,6 +1,8 @@
 class TimesheetSerializer < ActiveModel::Serializer
   attributes :id, :periodStart
 
+  belongs_to :user
+
   has_many :timeEntrySets
 
   def periodStart
