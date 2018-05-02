@@ -3,6 +3,7 @@
   font-weight: normal;
 }
 #approve-time-view div.panel {
+  padding: 0;
   border: 1px solid #CCC;
   -webkit-box-shadow: 0 0 10px #777;
           box-shadow: 0 0 10px #777;
@@ -12,6 +13,11 @@
   font-size: 1.6em;
   font-weight: normal;
   padding: 15px;
+}
+#approve-time-view div.panel div.panel-tools {
+  background: #CCCC;
+  padding: 15px;
+  margin: 0;
 }
 
 #time-entry-view h2 {
