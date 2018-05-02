@@ -21,7 +21,7 @@ class Api::V1::TimesheetsController < Api::V1::ApiController
   private
 
   def timesheet_params
-    params.require(:period_start, :time_entry_sets).map do |tes|
+    params.require(:period_start).require(:time_entry_sets).map do |tes|
       tes.permit(:charge_code, :description, time_entries: %i(date hours))
     end
   end
