@@ -18,6 +18,12 @@ class Api::V1::TimesheetsController < Api::V1::ApiController
     render_success_json(data: timesheet)
   end
 
+  def show
+    render_success_json(
+      data: current_user.timesheets.find(params[:id])
+    )
+  end
+
   private
 
   def timesheet_params
