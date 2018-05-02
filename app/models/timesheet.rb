@@ -11,4 +11,7 @@
 
 class Timesheet < ApplicationRecord
   belongs_to :user
+
+  has_many :time_entry_sets, dependent: :destroy
+  has_many :time_entries, through: :time_entry_sets
 end

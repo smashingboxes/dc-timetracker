@@ -4,8 +4,10 @@ class Api::V1::TimesheetsController < Api::V1::ApiController
   end
 
   def create
-    time_entry_set_params.each do |tes_params|
-      tes = tes_params[:id] ? TimeEntrySet.find(tes_params[:id]) : TimeEntrySet.new(user: current_user)
+    timesheet = params[:id] ? Timesheet.find(params[:id]) : Timesheet.create(user: current_user)
+
+    timesheet_params.each do |tes_params|
+      tes = tes_params[:id] ? timesheet.time_entry_set.find(tes_params[:id]) : timesheet.time_entry_sets.new
       time_entries_params = tes_params.delete(:time_entries)
       tes.update(tes_params)
       time_entries_params.each do |te_params|
@@ -20,7 +22,7 @@ class Api::V1::TimesheetsController < Api::V1::ApiController
 
   private
 
-  def time_entry_set_params
+  def timesheet_params
     params.require(:time_entry_sets).map do |tes|
       tes.permit(:charge_code, :description, time_entries: %i(date hours))
     end
