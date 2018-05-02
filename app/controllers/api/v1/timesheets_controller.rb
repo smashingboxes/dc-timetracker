@@ -12,7 +12,7 @@ class Api::V1::TimesheetsController < Api::V1::ApiController
       tes.update(tes_params)
       time_entries_params.each do |te_params|
         te = te_params[:id] ? TimeEntry.find(te_params[:id]) : TimeEntry.new(time_entry_set: tes)
-        te.update(date: te[:date], hours: te[:hours])
+        te.update(date: te_params[:date], hours: te_params[:hours])
       end
     end
     render_success_json(data: timesheet)

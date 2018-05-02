@@ -1,3 +1,3 @@
 class TimeEntrySerializer < ActiveModel::Serializer
-  attributes :date, :hours
+  attributes :id, :date, :hours
 end
