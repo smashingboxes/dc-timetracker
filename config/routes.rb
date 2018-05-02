@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      get "/hello-world", to: "hello_api#index"
+      resources :time_entry_sets, only: %i(index show update create delete)
     end
   end
 end
