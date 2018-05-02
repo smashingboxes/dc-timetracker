@@ -13,6 +13,9 @@ class Api::V1::TimesheetsController < Api::V1::ApiController
         te.update(date: te[:date], hours: te[:hours])
       end
     end
+    render json: {
+      time_entry_sets: current_user.time_entry_sets
+    }
   end
 
   private
