@@ -1,10 +1,10 @@
 class Api::V1::TimesheetsController < Api::V1::ApiController
   def index
-    render_success_json(data: current_user.time_entry_sets)
+    render_success_json(data: current_user.timesheets)
   end
 
   def create
-    timesheet = params[:id] ? Timesheet.find(params[:id]) : Timesheet.create(user: current_user)
+    timesheet = params[:id] ? Timesheet.find(params[:id]) : Timesheet.create(period_start: timesheet_params[:period_start], user: current_user)
 
     timesheet_params.each do |tes_params|
       tes = tes_params[:id] ? timesheet.time_entry_set.find(tes_params[:id]) : timesheet.time_entry_sets.new
@@ -21,7 +21,7 @@ class Api::V1::TimesheetsController < Api::V1::ApiController
   private
 
   def timesheet_params
-    params.require(:time_entry_sets).map do |tes|
+    params.require(:period_start, :time_entry_sets).map do |tes|
       tes.permit(:charge_code, :description, time_entries: %i(date hours))
     end
   end
