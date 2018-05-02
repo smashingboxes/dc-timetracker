@@ -18,8 +18,21 @@ define([
 
         data.timesheets.query({ periodStart: $scope.periodStart }, timesheets => {
             delete $scope.processing;
+            console.log(timesheets);
             $scope.timesheets = timesheets;
         });
+
+        $scope.getTotal = timeEntry => {
+            let total = 0;
+            timeEntry.timeEntries.forEach(entry => total += entry.hours * 1 || 0);
+            return total;
+        };
+
+        $scope.getGrandTotal = timesheet => {
+            let total = 0;
+            timesheet.timeEntrySets.forEach(timeEntry => total += $scope.getTotal(timeEntry));
+            return total;
+        };
     }
 
     angular.module('flash.approve', ['ngResource', 'ngRoute'])

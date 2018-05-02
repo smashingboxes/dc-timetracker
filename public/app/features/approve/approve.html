@@ -5,23 +5,24 @@
         <div class="panel" layout-margin flex>
             <h3>Pending Timesheets: {{ periodStart | date: 'MMMM d' }} - {{ periodEnd | date: 'd' }}, {{ periodEnd | date : 'yyyy' }}</h3>
             <div class="panel-tools" layout="row">
-                <md-button ng-if="(timesheets | filter: { sleected: true }).length">
+                <md-button>
                     Approve {{ (timesheets | filter: { sleected: true }).length }} timesheets
                 </md-button>
                 <span flex></span>
                 <md-icon><i class="material-icon">block</i></md-icon>
             </div>
             <md-list flex>
-                <md-list-item ng-repeat="timesheet in timesheets | filter: { approved: false }">
-                    <md-icon><i class="material-icon">{{ timesheet.selected ? 'check_box' : 'check_box_outline' }}</i></md-icon> 
-                <div>
-                    <a ng-href="/#!/approve/{{ timesheet.id }}">{{ timesheet.user.email }}</a>
-                </div>
-                <span flex></span>
-                <div>
-                    {{ getGrandTotal(timesheet) }}
-                </div>
-            </md-list-item>
+                <md-list-item ng-repeat="timesheet in timesheets">
+                    <md-checkbox class="grey" ng-model="timesheet.selected"></md-checkbox>
+                    {{ timesheet.selected }}
+                    <div>
+                        <a ng-href="/#!/approve/{{ timesheet.id }}">{{ timesheet.user.email }}</a>
+                    </div>
+                    <span flex></span>
+                    <div>
+                        {{ getGrandTotal(timesheet) }}
+                    </div>
+                </md-list-item>
             </md-list>
         </div>
 
