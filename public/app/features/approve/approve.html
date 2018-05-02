@@ -1,0 +1,25 @@
+<md-content layout-padding id="approve-time-view">
+    <h2>Approve Time</h2>
+    <div layout="row" flex>
+        <div class="panel" layout-margin flex>
+            <h3>Pending Timesheets: {{ periodStart | date: 'MMMM d' }} - {{ periodEnd | date: 'd' }}, {{ periodEnd | date : 'yyyy' }}</h3>
+            <md-list flex>
+                <md-list-item ng-repeat="timesheet in timesheets | filter: { approved: false }">
+                <md-icon><i class="material-icon"></i></md-icon> 
+                <div>
+                    <a ng-href="/#!/approve/{{ timesheet.id }}">{{ timesheet.user.email }}</a>
+                </div>
+                <span flex></span>
+                <div>
+                    {{ getGrandTotal(timesheet) }}
+                </div>
+            </md-list-item>
+            </md-list>
+        </div>
+
+        <div class="panel" layout-margin flex>
+            <h3>Approved Timesheets: {{ periodStart | date: 'MMMM d' }} - {{ periodEnd | date: 'd' }}, {{ periodEnd | date : 'yyyy' }}</h3>
+
+        </div>
+    </div>
+</md-content>
