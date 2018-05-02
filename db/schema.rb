@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180502133946) do
+ActiveRecord::Schema.define(version: 20180502182717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,8 +43,16 @@ ActiveRecord::Schema.define(version: 20180502133946) do
     t.string "charge_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "timesheet_id"
+    t.index ["timesheet_id"], name: "index_time_entry_sets_on_timesheet_id"
+  end
+
+  create_table "timesheets", force: :cascade do |t|
     t.bigint "user_id"
-    t.index ["user_id"], name: "index_time_entry_sets_on_user_id"
+    t.datetime "period_start"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_timesheets_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,5 +77,5 @@ ActiveRecord::Schema.define(version: 20180502133946) do
   end
 
   add_foreign_key "time_entries", "time_entry_sets"
-  add_foreign_key "time_entry_sets", "users"
+  add_foreign_key "timesheets", "users"
 end
