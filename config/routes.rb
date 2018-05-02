@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :time_entry_sets, only: %i(index show update create delete)
+      resources :timesheets, only: %i(create)
     end
   end
 end
