@@ -29,7 +29,7 @@ exports.config = {
         browserName: 'firefox',
         marionette: true,
         shardTestFiles: argv.params.singleRun === 'false',
-        maxInstances: argv.params.singleRun !== 'false' ? 1 : 6
+        maxInstances: argv.params.singleRun !== 'false' ? 1 : 6,
         chromeOptions: {
             args: [
                 '--start-maximized'
@@ -64,10 +64,10 @@ exports.config = {
         browser.driver.manage().window().maximize();
 
         browser.get(browser.baseUrl);
-        element(by.model('login.username')).sendKeys(browser.params.username);
-        element(by.model('login.password')).sendKeys(browser.params.password);
-        element(by.buttonText('Log in')).click();
-        browser.wait(EC.presenceOf(element(by.css('div.authenticated'))),15000);
+        element(by.model('auth.email')).sendKeys(browser.params.username);
+        element(by.model('auth.password')).sendKeys(browser.params.password);
+        element(by.buttonText('Sign in')).click();
+        browser.wait(EC.presenceOf(element(by.css('div#dashboard'))),15000);
 
 
     },
