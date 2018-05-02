@@ -7,8 +7,11 @@
 #  description :text
 #  id          :integer          not null, primary key
 #  updated_at  :datetime         not null
+#  user_id     :integer
 #
 
 class TimeEntrySet < ApplicationRecord
+  belongs_to :user
+
   has_many :time_entries, dependent: :destroy
 end
