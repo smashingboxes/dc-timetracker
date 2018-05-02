@@ -5,15 +5,18 @@
         <div class="panel" layout-margin flex>
             <h3>Pending Timesheets: {{ periodStart | date: 'MMMM d' }} - {{ periodEnd | date: 'd' }}, {{ periodEnd | date : 'yyyy' }}</h3>
             <div class="panel-tools" layout="row">
-                <md-button>
-                    Approve {{ (timesheets | filter: { sleected: true }).length }} timesheets
-                </md-button>
+                <span>
+                    {{ (tmesheets | filter: { selected: true }).length }} timesheets selected
+                </span>
                 <span flex></span>
-                <md-icon><i class="material-icon">block</i></md-icon>
+                <md-button class="md-icon-button" ng-click="approveTime(timesheet)">
+                    <md-tooltip>Approve selected</md-tooltip>
+                    <md-icon><i class="material-icon">block</i></md-icon>
+                </md-button>
             </div>
             <md-list flex>
                 <md-list-item ng-repeat="timesheet in timesheets">
-                    <md-checkbox class="grey" ng-model="timesheet.selected"></md-checkbox>
+                    <md-checkbox class="green" ng-model="timesheet.selected"></md-checkbox>
                     {{ timesheet.selected }}
                     <div>
                         <a ng-href="/#!/approve/{{ timesheet.id }}">{{ timesheet.user.email }}</a>

@@ -18,7 +18,6 @@ define([
 
         data.timesheets.query({ periodStart: $scope.periodStart }, timesheets => {
             delete $scope.processing;
-            console.log(timesheets);
             $scope.timesheets = timesheets;
         });
 
