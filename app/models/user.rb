@@ -29,8 +29,7 @@ class User < ApplicationRecord
 
   include DeviseTokenAuth::Concerns::User
 
-  has_many :time_entry_sets, dependent: :destroy
+  has_many :timesheets, dependent: :destroy
+  has_many :time_entry_sets, through: :timesheets
   has_many :time_entries, through: :time_entry_sets
-
-  ROLES = %i(admin user supervisor)
 end

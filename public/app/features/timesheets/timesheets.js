@@ -27,7 +27,7 @@ define([
             rows.push({ timeEntries: [] });
         }
 
-        $scope.timeEntryObj = { timeEntrySets: rows };
+        $scope.timeEntryObj = { periodStart: dates[0], timeEntrySets: rows };
 
         $scope.saveTime = () => {
             $scope.processing = true;

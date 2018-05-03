@@ -90,6 +90,11 @@ module.exports = function(config) {
     //    'Chrome'
     ],
 
+    coverageReporter: {
+      type : 'html',
+      dir : 'public/coverage/'
+    },
+
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
