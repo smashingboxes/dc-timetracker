@@ -6,7 +6,12 @@ class Timesheet extends Page {
     constructor() {
         super();
         this.url = '/#!/timesheets';
+        this.inputFields = $$('input');
     }
+
+   forAllInputFields(cb) {
+        this.fields.each(field => cb(field));
+   }
 
 }
 
