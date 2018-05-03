@@ -56,10 +56,11 @@ ActiveRecord::Schema.define(version: 20180503163228) do
 
   create_table "time_entry_sets", force: :cascade do |t|
     t.text "description"
-    t.string "charge_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "timesheet_id"
+    t.bigint "charge_code_id"
+    t.index ["charge_code_id"], name: "index_time_entry_sets_on_charge_code_id"
     t.index ["timesheet_id"], name: "index_time_entry_sets_on_timesheet_id"
   end
 
@@ -68,6 +69,7 @@ ActiveRecord::Schema.define(version: 20180503163228) do
     t.datetime "period_start"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
     t.index ["user_id"], name: "index_timesheets_on_user_id"
   end
 
