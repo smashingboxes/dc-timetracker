@@ -22,13 +22,6 @@ supervisor = User.create(
 )
 supervisor.add_role(:supervisor)
 
-reporter = User.create(
-  email: "reporter@example.com",
-  password: "password",
-  password_confirmation: "password"
-)
-reporter.add_role(:reporter)
-
 administrator = User.create(
   email: "administrator@example.com",
   password: "password",

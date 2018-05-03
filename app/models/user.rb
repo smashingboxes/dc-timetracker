@@ -31,4 +31,6 @@ class User < ApplicationRecord
 
   has_many :time_entry_sets, dependent: :destroy
   has_many :time_entries, through: :time_entry_sets
+
+  ROLES = %i(admin user supervisor)
 end
