@@ -25,7 +25,9 @@ define([
     'features/home/home',
     'features/login/login',
     'features/timesheets/timesheets',
-    'features/approve/approve'
+    'features/approve/approve',
+    'features/admin/admin',
+    'features/admin/jobs/jobs',
 ],
 angular => {
     var app = angular.module('flash', [
@@ -44,7 +46,8 @@ angular => {
         'flash.home',
         'flash.login',
         'flash.timesheets',
-        'flash.approve'
+        'flash.approve',
+        'flash.admin'
     ]);
 
     app.config(($routeProvider, $qProvider) => {

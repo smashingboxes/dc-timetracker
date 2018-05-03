@@ -75,10 +75,31 @@ button.md-button {
     border: 2px solid @medium-blue;
     &.md-primary {
         background: @medium-blue !important;
+        color: #FFF;
+        i {
+            color: #FFF;
+        }
     }
     &.md-default {
         background: #FFF;
         color: @medium-blue;
+    }
+}
+
+table {
+    border: 1px solid #CCC;
+    margin: 15px;
+    width: 100%;
+    td, th {
+        width: auto;
+        padding: 10px;
+        &.sn {
+            width: 20px;
+        }
+    }
+    th {
+        background: #CCC;
+        text-align: left;
     }
 }
 

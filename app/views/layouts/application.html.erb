@@ -21,6 +21,16 @@
                 <md-nav-item md-nav-click="goto('/')" name="dashboard">Dashboard</md-nav-item>
                 <md-nav-item md-nav-click="goto('timesheets')" name="timesheets">Manage Time</md-nav-item>
                 <md-nav-item md-nav-click="goto('approve')" name="approve">Approve Time</md-nav-item>
+                <md-menu>
+                    <md-button ng-click="$mdMenu.open()">
+                        Admin
+                    </md-button>
+                    <md-menu-content width="4">
+                        <md-menu-item>
+                            <md-button ng-click="goto('admin/jobs')">Jobs</md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
                 <span flex></span>
                 <p-user></p-user>
             </md-nav-bar>

@@ -1,0 +1,29 @@
+<md-progress-linear md-mode="indeterminate" ng-if="processing"></md-progress-linear>
+<md-content layout-padding id="approve-time-view">
+    <h2>Manage Jobs</h2>
+    <div class="panel">
+        <md-button class="md-primary" ng-click="openJobModal($event)">
+            <md-icon><i class="material-icon">add</i></md-icon>
+            Create Job
+        </md-button>
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th class="sn" halign="left" width="3">#</th>
+                    <th halign="left">Job Code</th>
+                    <th halign="left">Job Name</th>
+                    <th halign="left">Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="job in jobs">
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ job.code }}</td>
+                    <td>{{ job.name }}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</md-content>

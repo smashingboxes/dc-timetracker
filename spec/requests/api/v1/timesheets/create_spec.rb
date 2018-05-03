@@ -35,10 +35,12 @@ describe "POST /api/v1/timesheets", as: :request do
       expect(response).to be_success
     end
 
-    pending "creates a timesheet request" do
-      expect { subject }.to change(Timesheet, :count).by(1)
-      expect { subject }.to change(TimeEntrySet, :count).by(2)
-      expect { subject }.to change(TimeEntry, :count).by(6)
+    it "creates a timesheet request" do
+      expect { subject }
+        .to change(Timesheet, :count)
+        .by(1)
+        .and(change(TimeEntrySet, :count).by(2))
+        .and(change(TimeEntry, :count).by(6))
     end
   end
 end

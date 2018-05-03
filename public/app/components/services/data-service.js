@@ -17,9 +17,13 @@ define(
                 update: { method: 'PUT' }
             });
 
+            const jobs = $resource('/api/v1/jobs/:id', { id: '@id' }, {
+                update: { method: 'PUT' }
+            });
             return {
                 auth,
-                timesheets
+                timesheets,
+                jobs
             };
         }
 
