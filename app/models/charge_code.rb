@@ -1,0 +1,2 @@
+class ChargeCode < ApplicationRecord
+end
