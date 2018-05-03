@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180503133336) do
+ActiveRecord::Schema.define(version: 20180503163228) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20180503133336) do
 
   create_table "charge_codes", force: :cascade do |t|
     t.string "code"
-    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -72,6 +71,15 @@ ActiveRecord::Schema.define(version: 20180503133336) do
     t.index ["user_id"], name: "index_timesheets_on_user_id"
   end
 
+  create_table "user_charge_codes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "charge_code_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["charge_code_id"], name: "index_user_charge_codes_on_charge_code_id"
+    t.index ["user_id"], name: "index_user_charge_codes_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -88,6 +96,7 @@ ActiveRecord::Schema.define(version: 20180503133336) do
     t.string "provider", default: "email", null: false
     t.string "uid", null: false
     t.json "tokens"
+    t.boolean "active"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
@@ -103,4 +112,6 @@ ActiveRecord::Schema.define(version: 20180503133336) do
 
   add_foreign_key "time_entries", "time_entry_sets"
   add_foreign_key "timesheets", "users"
+  add_foreign_key "user_charge_codes", "charge_codes"
+  add_foreign_key "user_charge_codes", "users"
 end
