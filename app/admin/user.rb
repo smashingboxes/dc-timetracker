@@ -3,7 +3,6 @@ ActiveAdmin.register User do
   permit_params :email, :password, :password_confirmation, role_ids: []
 
   index do
-    id_column
     column :email
     actions
   end
