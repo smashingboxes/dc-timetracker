@@ -223,10 +223,14 @@ body {
 body md-icon i {
   font-style: normal;
 }
+body #logo-image {
+  height: 64px;
+}
 body #logo {
   max-width: 140px;
   margin-right: 200px;
   padding-left: 15px;
+  padding-top: 10px;
   font-size: 1.2em;
   font-weight: bold;
 }
