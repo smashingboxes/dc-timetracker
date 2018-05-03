@@ -15,20 +15,23 @@ end
 employee = User.create(
   email: "employee@example.com",
   password: "password",
-  password_confirmation: "password"
+  password_confirmation: "password",
+  active: true
 )
 employee.add_role(:employee)
 
 supervisor = User.create(
   email: "supervisor@example.com",
   password: "password",
-  password_confirmation: "password"
+  password_confirmation: "password",
+  active: true
 )
 supervisor.add_role(:supervisor)
 
 administrator = User.create(
   email: "administrator@example.com",
   password: "password",
-  password_confirmation: "password"
+  password_confirmation: "password",
+  active: true
 )
 administrator.add_role(:administrator)

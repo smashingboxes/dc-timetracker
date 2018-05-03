@@ -5,6 +5,7 @@
 #  created_at   :datetime         not null
 #  id           :integer          not null, primary key
 #  period_start :datetime
+#  status       :string
 #  updated_at   :datetime         not null
 #  user_id      :integer
 #

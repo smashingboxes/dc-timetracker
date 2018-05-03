@@ -1,9 +1,8 @@
 ActiveAdmin.register User do
-  actions :all
-  permit_params :email, :password, :password_confirmation, role_ids: []
+  actions :all, except: %i(destroy)
+  permit_params :email, :active, :password, :password_confirmation, role_ids: []
 
   index do
-    id_column
     column :email
     actions
   end
@@ -14,6 +13,7 @@ ActiveAdmin.register User do
       f.input :password
       f.input :password_confirmation
       f.input :roles, as: :check_boxes
+      f.input :active
     end
 
     actions
@@ -31,6 +31,7 @@ ActiveAdmin.register User do
       row :last_sign_in_ip
       row :created_at
       row :updated_at
+      row :active
     end
   end
 

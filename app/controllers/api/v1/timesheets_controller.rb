@@ -31,7 +31,7 @@ class Api::V1::TimesheetsController < Api::V1::ApiController
       :period_start,
       time_entry_sets: [
         :id,
-        :charge_code,
+        :charge_code_id,
         :description,
         time_entries: %i(id date hours)
       ]
