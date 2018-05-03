@@ -28,8 +28,8 @@ var shell = require('gulp-shell');
 var bump = require('gulp-bump');
 
 var baseUrl = argv.baseUrl || 'http://localhost:3000';
-var username = argv.username || 'user1';
-var password = argv.password || '';
+var username = argv.username || 'test@example.com';
+var password = argv.password || 'abcd1234';
 var browser = argv.browser || 'firefox';
 var runAs = argv['run-as'] || 'user';
 var env = argv.env;

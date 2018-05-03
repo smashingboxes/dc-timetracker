@@ -1,0 +1,37 @@
+<md-progress-linear md-mode="indeterminate" ng-if="processing"></md-progress-linear>
+<md-content layout-padding id="approve-time-view">
+    <h2>Approve Time</h2>
+    <div layout="row" flex>
+        <div class="panel" layout-margin flex>
+            <h3>Pending Timesheets: {{ periodStart | date: 'MMMM d' }} - {{ periodEnd | date: 'd' }}, {{ periodEnd | date : 'yyyy' }}</h3>
+            <div class="panel-tools" layout="row">
+                <span>
+                    {{ (tmesheets | filter: { selected: true }).length }} timesheets selected
+                </span>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="approveTime(timesheet)">
+                    <md-tooltip>Approve selected</md-tooltip>
+                    <md-icon><i class="material-icon">block</i></md-icon>
+                </md-button>
+            </div>
+            <md-list flex>
+                <md-list-item ng-repeat="timesheet in timesheets">
+                    <md-checkbox class="green" ng-model="timesheet.selected"></md-checkbox>
+                    {{ timesheet.selected }}
+                    <div>
+                        <a ng-href="/#!/approve/{{ timesheet.id }}">{{ timesheet.user.email }}</a>
+                    </div>
+                    <span flex></span>
+                    <div>
+                        {{ getGrandTotal(timesheet) }}
+                    </div>
+                </md-list-item>
+            </md-list>
+        </div>
+
+        <div class="panel" layout-margin flex>
+            <h3>Approved Timesheets: {{ periodStart | date: 'MMMM d' }} - {{ periodEnd | date: 'd' }}, {{ periodEnd | date : 'yyyy' }}</h3>
+
+        </div>
+    </div>
+</md-content>

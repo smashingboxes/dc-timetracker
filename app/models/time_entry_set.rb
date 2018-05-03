@@ -11,7 +11,7 @@
 #
 
 class TimeEntrySet < ApplicationRecord
-  belongs_to :user
+  belongs_to :timesheet
 
   has_many :time_entries, dependent: :destroy
 end
