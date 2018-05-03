@@ -51,7 +51,7 @@ exports.config = {
         var Jasmine2HtmlReporter = require('protractor-jasmine2-html-reporter');
         jasmine.getEnv().addReporter(
             new Jasmine2HtmlReporter({
-                savePath: './reports/',
+                savePath: './public/reports/',
                 screenshotsFolder: 'images',
                 filePrefix: 'Planurai-Report',
                 consolidate: true,
