@@ -10,4 +10,6 @@
 #
 
 class ChargeCode < ApplicationRecord
+  validates :code, presence: true
+  validates :name, presence: true
 end
