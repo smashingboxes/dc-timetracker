@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180503133336) do
+ActiveRecord::Schema.define(version: 20180503160434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,10 +57,11 @@ ActiveRecord::Schema.define(version: 20180503133336) do
 
   create_table "time_entry_sets", force: :cascade do |t|
     t.text "description"
-    t.string "charge_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "timesheet_id"
+    t.bigint "charge_code_id"
+    t.index ["charge_code_id"], name: "index_time_entry_sets_on_charge_code_id"
     t.index ["timesheet_id"], name: "index_time_entry_sets_on_timesheet_id"
   end
 
@@ -69,7 +70,17 @@ ActiveRecord::Schema.define(version: 20180503133336) do
     t.datetime "period_start"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
     t.index ["user_id"], name: "index_timesheets_on_user_id"
+  end
+
+  create_table "user_charge_codes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "charge_code_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["charge_code_id"], name: "index_user_charge_codes_on_charge_code_id"
+    t.index ["user_id"], name: "index_user_charge_codes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -103,4 +114,6 @@ ActiveRecord::Schema.define(version: 20180503133336) do
 
   add_foreign_key "time_entries", "time_entry_sets"
   add_foreign_key "timesheets", "users"
+  add_foreign_key "user_charge_codes", "charge_codes"
+  add_foreign_key "user_charge_codes", "users"
 end
