@@ -288,6 +288,24 @@ button.md-button.md-default {
   background: #FFF;
   color: #0071bc;
 }
+table {
+  border: 1px solid #CCC;
+  margin: 15px;
+  width: 100%;
+}
+table td,
+table th {
+  width: auto;
+  padding: 10px;
+}
+table td.sn,
+table th.sn {
+  width: 20px;
+}
+table th {
+  background: #CCC;
+  text-align: left;
+}
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;

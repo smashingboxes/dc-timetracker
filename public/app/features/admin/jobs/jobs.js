@@ -7,6 +7,12 @@ define([
 ], angular => {
     function JobsController($scope, data, $mdDialog) {
         $scope.jobs = [];
+        $scope.processing = true;
+        data.jobs.query(jobs => {
+            $scope.jobs = jobs;
+            console.log($scope.jobs);
+            delete $scope.processing;
+        });
         $scope.openJobModal = e => {
             $mdDialog.show({
                 title: 'Job Details',
