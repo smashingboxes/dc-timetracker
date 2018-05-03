@@ -1,0 +1,36 @@
+<md-dialog flex="50" flex-gt-xl="30">
+    <form name="jobForm" ng-submit="submitJob()" novalidate>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h3>Job Details</h3>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="closeModal()">
+                    <md-icon><i class="material-icon">close</i></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content layout-padding>
+            <div class="error" ng-if="jobError">
+                <md-icon><i class="material-icon">warning</i></md-icon>
+                There was an error creating this job
+            </div>
+            <div layout="column">
+                <md-input-container flex>
+                    <label>Job Code</label>
+                    <input ng-model="job.code" type="text" required>
+                </md-input-container>
+
+                <md-input-container flex>
+                    <label>Job Name</label>
+                    <input ng-model="job.name" type="text" required>
+                </md-input-container>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row" layout-align="center center">
+            <md-button type="submit" class="md-primary" ng-disabled="jobForm.$invalid">
+                Submit
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

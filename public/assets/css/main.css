@@ -279,6 +279,10 @@ button.md-button {
 }
 button.md-button.md-primary {
   background: #0071bc !important;
+  color: #FFF;
+}
+button.md-button.md-primary i {
+  color: #FFF;
 }
 button.md-button.md-default {
   background: #FFF;
