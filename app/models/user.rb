@@ -2,6 +2,7 @@
 #
 # Table name: users
 #
+#  active                 :boolean
 #  created_at             :datetime         not null
 #  current_sign_in_at     :datetime
 #  current_sign_in_ip     :inet
