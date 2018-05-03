@@ -4,7 +4,7 @@ define([
     'components/components',
     'components/services/data-service'
 ], angular => {
-    function TimesheetsController($scope, data) {
+    function TimesheetsController($scope, data, $filter) {
         function getLastDayOfMonth(month, year) {
             return new Date(year, month, 0).getDate();
         }
@@ -28,6 +28,12 @@ define([
         }
 
         $scope.timeEntryObj = { periodStart: dates[0], timeEntrySets: rows };
+
+        $scope.processing = true;
+        data.jobs.query(jobs => {
+            $scope.jobs = jobs;
+            delete $scope.processing;
+        });
 
         $scope.saveTime = () => {
             $scope.processing = true;
@@ -65,6 +71,8 @@ define([
             $scope.timeEntryObj.timeEntrySets.forEach(timeEntry => total += $scope.getTotal(timeEntry));
             return total;
         };
+
+        $scope.getJobName = id => id ? $filter('filter')($scope.jobs, { id }, true)[0].name : '';
 
     }
 

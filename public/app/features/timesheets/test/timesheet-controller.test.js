@@ -164,5 +164,25 @@ define([
             expect($scope.processing).toBe(undefined);
 
         });
+
+        it('should return the job name by id', () => {
+            $scope.jobs = [
+                { id: 1, name: 'Job 1' },
+                { id: 2, name: 'Job 2' },
+                { id: 3, name: 'Job 3' }
+            ];
+
+            expect($scope.getJobName(2)).toEqual('Job 2');
+        });
+
+        it('should not return the job name if no id is provided', () => {
+            $scope.jobs = [
+                { id: 1, name: 'Job 1' },
+                { id: 2, name: 'Job 2' },
+                { id: 3, name: 'Job 3' }
+            ];
+
+            expect($scope.getJobName()).toEqual('');
+        });
     });
 });

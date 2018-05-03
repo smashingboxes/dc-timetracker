@@ -5,30 +5,30 @@
     <form name="timeEntryForm" ng-submit="saveTime()" novalidate>
         <div layout="column" class="block">
             <div layout="row" id="table-headers">
-                <div class="description header" flex="40">Description of work</div>
-                <div class="charge-code header" flex="10">Charge Code</div>
+                <div class="charge-code header" flex="10">Job Code</div>
+                <div class="description header" flex="10">Job Name</div>
                 <div class="date" ng-class="{ 'active': date === timeEntryObj.activeDate }" ng-repeat="date in dates" flex>{{ date | date: 'd' }}</div>
                 <div class="total" flex></div>
             </div>
             <div layout="row" class="table-rows" layout-align="center center" ng-repeat-start="timeEntry in timeEntryObj.timeEntrySets">
-                <div class="description header" flex="40" layout="column">
-                    <textarea flex rows="2" ng-model="chargeCode.description" placeholder="Describe work"></textarea>
-                </div>
                 <div class="charge-code" flex="10">
-                    <div class="bordered">
-                        <input ng-model="timeEntry.chargeCode" aria-label="charge code">
-                    </div>
+                    <md-select ng-model="timeEntry.chargeCodeId" placeholder="Select Charge Code">
+                        <md-option ng-repeat="job in jobs" ng-value="job.id">{{ job.code }}</md-option>
+                    </md-select>
+                </div>
+                <div class="description" flex="10" layout="column">
+                    <input flex rows="2" ng-value="getJobName(timeEntry.chargeCodeId)" disabled>
                 </div>
                 <div class="date bordered" ng-class="{ 'active': date === timeEntryObj.activeDate }" ng-init="timeEntry.timeEntries[$index] = { date: date }" ng-repeat="date in dates" flex>
                     <div>
-                        <input ng-focus="timeEntryObj.activeDate = date" ng-model="timeEntry.timeEntries[$index].hours" ng-disabled="!timeEntry.chargeCode" aria-label="hours worked for {{ date | date: 'mediumDate' }}">
+                        <input ng-focus="timeEntryObj.activeDate = date" ng-model="timeEntry.timeEntries[$index].hours" ng-disabled="!timeEntry.chargeCodeId" aria-label="hours worked for {{ date | date: 'mediumDate' }}">
                     </div>
                 </div>
                 <div class="total" flex>{{ getTotal(timeEntry) }}</div>
             </div>
             <md-divider ng-repeat-end ng-if="!$last"></md-divider>
             <div id="totals-row" layout="row">
-                <div class="description header" flex="40"></div>
+                <div class="description header" flex="10"></div>
                 <div class="charge-code header" flex="10"></div>
                 <div class="date" ng-repeat="date in dates" flex>{{ getDateTotal(date) }}</div>
                 <div class="total" flex>{{ getGrandTotal() }}</div>
