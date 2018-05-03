@@ -6,7 +6,6 @@ describe "GET /api/v1/jobs/:id", as: :request do
   let(:params) { {} }
 
   context "when given a valid request" do
-
     let!(:charge_code) { create(:charge_code) }
     let(:id) { charge_code.id }
 
@@ -19,15 +18,13 @@ describe "GET /api/v1/jobs/:id", as: :request do
       subject
       expect(json_response).to include("id", "code", "name")
     end
-
   end
 
   context "when given a invalid request" do
+    let(:id) { 12_342 }
 
-    let(:id) { 12342 }
-
-    it "returns a 404" do 
-      expect{ subject }.to raise_error(ActiveRecord::RecordNotFound)
+    it "returns a 404" do
+      expect { subject }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
 end
