@@ -8,6 +8,10 @@ class Api::V1::JobsController < Api::V1::ApiController
     render_success_json(data: ChargeCode.all)
   end
 
+  def show
+    render_success_json(data: ChargeCode.find(params[:id]))
+  end
+
   private
 
   def charge_code_params
