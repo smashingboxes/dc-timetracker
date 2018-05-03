@@ -32,4 +32,7 @@ class User < ApplicationRecord
   has_many :timesheets, dependent: :destroy
   has_many :time_entry_sets, through: :timesheets
   has_many :time_entries, through: :time_entry_sets
+
+  has_many :user_charge_codes, dependent: :destroy
+  has_many :charge_codes, through: :user_charge_codes
 end

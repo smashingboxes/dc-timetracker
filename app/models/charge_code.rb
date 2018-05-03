@@ -10,4 +10,6 @@
 #
 
 class ChargeCode < ApplicationRecord
+  has_many :user_charge_codes, dependent: :destroy
+  has_many :users, through: :user_charge_codes
 end

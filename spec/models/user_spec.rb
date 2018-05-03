@@ -6,4 +6,5 @@ RSpec.describe User, type: :model do
   it { is_expected.to have_many(:timesheets) }
   it { is_expected.to have_many(:time_entry_sets) }
   it { is_expected.to have_many(:time_entries) }
+  it { is_expected.to have_many(:charge_codes) }
 end
